@@ -1,5 +1,7 @@
 # If we are using one model as a field in another model, then it is called nested models.
 
+# If any parameter has hierarchy then we can use the concept of nested models.
+
 from pydantic import BaseModel
 class Address(BaseModel):
 
@@ -36,3 +38,8 @@ print(patient1.gender)
 print(patient1.address.city)
 print(patient1.address.state)
 print(patient1.address.pincode)
+
+# Better organization of related data (e.g., vitals, address, insurance)
+# Reusability : use Vitals in multiple models (e.g., Patient, MedicalRecord).
+# Readability : Easier for developers and API consumers to understand.
+# Validation : Nested models are validated automatically - no extra work needed.
